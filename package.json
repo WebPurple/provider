@@ -1,7 +1,7 @@
 {
-  "name": "vk-provider",
+  "name": "webpurple-provider",
   "version": "0.0.1",
-  "description": "Requests provider for VK",
+  "description": "Requests provider service",
   "author": "Igor Fedyukin <Igor_Fedyukin@epam.com>",
   "license": "MIT",
   "scripts": {

@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
-import { VkService } from './services/vk.service';
+import { VkService, GithubService } from './services';
 
 @Module({
-  providers: [VkService],
-  exports: [VkService],
+  providers: [VkService, GithubService],
+  exports: [VkService, GithubService],
 })
 export class CommonModules {}

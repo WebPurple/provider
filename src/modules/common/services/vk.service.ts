@@ -5,13 +5,13 @@ import axios from 'axios';
 
 @Injectable()
 export class VkService {
-  private SERVICE_TOKEN = config.serviceToken;
-  private API_URL = config.apiUrl;
-  private API_VERSION = config.apiVersion;
+  private SERVICE_TOKEN = config.vk.serviceToken;
+  private API_URL = config.vk.apiUrl;
+  private API_VERSION = config.vk.apiVersion;
 
   public getPhotos(params: { owner_id: string; album_id: string }): Promise<GetPhotoDto> {
     return axios
-      .get(`${this.API_URL}/photos/get`, {
+      .get(`${this.API_URL}/photos.get`, {
         params: {
           ...params,
           access_token: this.SERVICE_TOKEN,
@@ -19,10 +19,10 @@ export class VkService {
         },
       })
       .then(response => response.data.response)
+      .then(GetPhotoDto.of)
       .catch(e => {
         console.error(e);
         return null;
-      })
-      .then(GetPhotoDto.of);
+      });
   }
 }
