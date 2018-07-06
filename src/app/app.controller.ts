@@ -1,4 +1,4 @@
-import { Get, Controller, Header, HttpCode } from "@nestjs/common";
+import { Get, Controller, Header, HttpCode } from '@nestjs/common';
 
 @Controller()
 export class AppController {
@@ -6,8 +6,8 @@ export class AppController {
 
   @Get()
   @HttpCode(301)
-  @Header("Location", "https://www.webpurple.net/")
+  @Header('Location', 'https://www.webpurple.net/')
   root(): string {
-    return "Hello world!";
+    return 'Hello world!';
   }
 }
