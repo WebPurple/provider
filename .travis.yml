@@ -3,3 +3,9 @@ node_js:
   - "lts/*"
 script:
   - npm run prestart
+deploy:
+  provider: heroku
+  api_key:
+    secure: $HEROKU_TOKEN
+  on:
+    branch: master
