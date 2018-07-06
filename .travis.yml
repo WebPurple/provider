@@ -5,6 +5,7 @@ script:
   - npm run prestart
 deploy:
   provider: heroku
+  app: webpurple-provider
   api_key:
     secure: $HEROKU_TOKEN
   on:
