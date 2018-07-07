@@ -10,6 +10,7 @@ script:
       -mindepth 1 \
       -name "*" \
       ! -name "dist" \
+      ! -name ".git" \
       -exec rm -r {} \;
   - |
     find ./ \
