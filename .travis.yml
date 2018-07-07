@@ -2,9 +2,27 @@ language: node_js
 node_js:
   - "lts/*"
 script:
-  - npm run prestart
+  - npm run build
+  - |
+    find ./ \
+      -type d \
+      -maxdepth 1 \
+      -mindepth 1 \
+      -name "*" \
+      ! -name "dist" \
+      -exec rm -r {} \;
+  - |
+    find ./ \
+      -type f \
+      -maxdepth 1 \
+      -mindepth 1 \
+      -name "*" \
+      ! -name "package.json" \
+      ! -name "package-lock.json" \
+      -exec rm -r {} \;
 deploy:
   provider: heroku
+  skip-cleanup: true
   app: webpurple-provider
   api_key:
     secure: $HEROKU_TOKEN

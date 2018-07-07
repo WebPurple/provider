@@ -3,11 +3,20 @@
 [![License MIT](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/WebPurple/provider/blob/master/LICENSE)
 
 
-## Локальная работа
+## Установка
+### Клонирование и установка модулей
 ```sh
 git clone https://github.com/WebPurple/provider.git
 npm install
+```
+### develop
+```sh
 npm run dev
+```
+### production
+```sh
+npm run build
+npm start
 ```
 
 ## Методы
